@@ -31,7 +31,7 @@ sequelize.authenticate()
   .then(() => console.log("Conectado ao MySQL"))
   .catch(err => console.error("Erro no MySQL:", err));
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 app.get("/", (req, res) => {
   res.send("API funcionando 🚀");
