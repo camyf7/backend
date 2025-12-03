@@ -26,6 +26,12 @@ app.use("/music", musicRoutes);
 app.use("/tracks", trackRoutes);
 app.use("/audio", express.static("public/audio"));
 app.use("/img", express.static(path.join(__dirname, "..", "public", "img")));
+
+// Sincroniza os modelos com o banco de dados
+sequelize.sync({ alter: true }) // Use { force: true } para recriar tabelas
+  .then(() => console.log("Banco de dados sincronizado com sucesso"))
+  .catch(err => console.error("Erro ao sincronizar o banco de dados:", err));
+
 // Teste conexão
 sequelize.authenticate()
   .then(() => console.log("Conectado ao MySQL"))
