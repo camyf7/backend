@@ -1,0 +1,9 @@
+### Cadastro de usuário
+POST https://echomusic.up.railway.app/user/register
+Content-Type: application/json
+
+{
+    "username": "lrodrigues",
+    "email": "lrodrigues@ifsp.edu.br",
+    "password": "12345678"
+}
